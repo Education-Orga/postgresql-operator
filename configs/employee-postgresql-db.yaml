@@ -1,0 +1,16 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: employee-management-db-cluster
+  namespace: default
+spec:
+  teamId: "employee"
+  volume:
+    size: 1Gi
+  numberOfInstances: 2
+  users:
+    hr_user: []  
+  databases:
+    employeedb: hr_user  
+  postgresql:
+    version: "13"

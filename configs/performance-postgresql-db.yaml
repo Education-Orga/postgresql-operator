@@ -1,0 +1,16 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: performance-db-cluster
+  namespace: default
+spec:
+  teamId: "performance"
+  volume:
+    size: 1Gi
+  numberOfInstances: 2
+  users:
+    hr_user: []
+  databases:
+    performancedb: hr_user  
+  postgresql:
+    version: "13"
